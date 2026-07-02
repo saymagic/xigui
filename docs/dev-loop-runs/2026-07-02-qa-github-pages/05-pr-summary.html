@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>系规问答网页实现摘要</title>
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, "PingFang SC", sans-serif; color: #202124; background: #f6f7f8; }
+      main { max-width: 920px; margin: 0 auto; padding: 32px 18px; }
+      section, details { margin: 14px 0; padding: 18px; border: 1px solid #dde1e5; border-radius: 8px; background: white; }
+      h1 { margin: 0 0 12px; font-size: 30px; }
+      h2 { margin: 0 0 10px; font-size: 18px; }
+      p, li { line-height: 1.7; }
+      code { background: #eef0f2; padding: 2px 5px; border-radius: 4px; }
+      .status { color: #0f766e; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>系规问答网页实现摘要</h1>
+      <section>
+        <h2>Summary</h2>
+        <p class="status">PASS_WITH_NOTES</p>
+        <p>从扫描版 PDF OCR 出 393 条问答，制作了零依赖静态问答复习网页，支持搜索、章节筛选、列表复习、卡片背诵、答案显示和本地掌握状态。</p>
+      </section>
+      <section>
+        <h2>Validation</h2>
+        <ul>
+          <li><code>npm test</code> 通过：393 题、20 章、无漏号、无空字段。</li>
+          <li><code>npm run build</code> 通过：生成 Pages 发布目录 <code>dist</code>。</li>
+          <li>浏览器验证通过：桌面、移动端、搜索、答案展开、卡片模式和发布包加载。</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Deployment Note</h2>
+        <p>仓库已准备 GitHub Pages Actions 工作流，但远程发布被环境阻塞：本机没有 <code>gh</code>，GitHub 连接器也没有已安装账户或可访问仓库。</p>
+      </section>
+      <details>
+        <summary>Changed Files</summary>
+        <p><code>index.html</code>, <code>src/app.js</code>, <code>src/styles.css</code>, <code>src/data/questions.json</code>, <code>assets/source-preview.png</code>, <code>scripts/*</code>, <code>.github/workflows/pages.yml</code>.</p>
+      </details>
+    </main>
+  </body>
+</html>

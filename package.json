@@ -1,0 +1,11 @@
+{
+  "name": "xigui-qa-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_site.mjs",
+    "test": "node scripts/validate_data.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}
