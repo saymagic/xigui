@@ -42,3 +42,9 @@ Local Git repository initialized on `main`. Remote GitHub Pages publishing is bl
 - Pushed remote commit `003e51e` to `saymagic/saymagic.github.io`.
 - GitHub Actions run `28557842069` failed before starting the job because GitHub reports the account is locked due to a billing issue.
 - Verified `https://saymagic.github.io/xigui/` redirects to `https://blog.saymagic.cn/xigui/`, but the target currently returns 404 because the Pages deployment did not run.
+
+## Remote Deployment Retry
+- Pushed retry commit `289c414` to `saymagic/saymagic.github.io`, adding `xigui/deploy-retry.txt` so the `xigui/**` path filter definitely matched.
+- GitHub Actions run `28567545898` was created for `289c414` and completed with `failure`.
+- The job had no steps and no assigned runner (`runner_id: 0`), which confirms it failed before workflow execution.
+- Re-checked `https://saymagic.github.io/xigui/`; it still redirects to `https://blog.saymagic.cn/xigui/`, which still returns 404.
