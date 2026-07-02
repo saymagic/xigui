@@ -24,6 +24,7 @@ PASS_WITH_NOTES
 - Flashcard check: card mode showed question, answer hidden by default, reveal worked.
 - Mobile viewport check at 390 x 844: single-column layout, no horizontal overflow, search/select controls 340 x 44 px.
 - Built package check: `dist` served locally with 393 cards and source image loaded.
+- Remote deployment attempt: pushed commit `003e51e` to `saymagic/saymagic.github.io`; GitHub Actions run `28557842069` failed with a billing-lock account error before deployment.
 
 ## Requirement Coverage
 - Q&A website from the document: complete, 393 parsed questions.
@@ -31,11 +32,11 @@ PASS_WITH_NOTES
 - Mobile adaptation: verified at 390 x 844 with screenshot.
 - Complete usability: search, filter, list, flashcard, answer reveal, learned state.
 - Real testing: data, build, source server, dist server, browser interactions.
-- GitHub Pages deployment: workflow and local Git commit prepared; remote publication blocked by unavailable GitHub auth/tooling.
+- GitHub Pages deployment: deployment files were pushed to `saymagic/saymagic.github.io`, but the Pages action did not start because GitHub reports the account is locked due to a billing issue. The target URL currently returns 404.
 
 ## Findings
 - No unresolved app/data blockers.
-- Remote deployment needs either a GitHub repository target plus credentials or an installed/authenticated `gh`/GitHub connector.
+- Remote deployment is blocked by GitHub account billing state. The code and workflow changes are already pushed, so the deployment should be able to run once the account lock is resolved and the workflow is re-run.
 
 ## Fixes Applied
 - Added merged OCR line splitting for two-column artifacts.
@@ -47,4 +48,4 @@ PASS_WITH_NOTES
 - The site publishes extracted study content once pushed to a public Pages repository.
 
 ## Follow-ups
-- Provide a GitHub repository remote or authenticate GitHub tooling, then push `main` and let `.github/workflows/pages.yml` deploy.
+- Resolve the GitHub billing/account lock, then re-run `Deploy static content to Pages` for commit `003e51e` or push another `xigui/**` change to trigger it.

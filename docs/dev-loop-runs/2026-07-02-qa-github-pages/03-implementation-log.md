@@ -32,3 +32,13 @@
 
 ## Deployment Status
 Local Git repository initialized on `main`. Remote GitHub Pages publishing is blocked because no `gh` CLI is installed and the GitHub connector has no installed accounts or accessible repositories in this environment.
+
+## Remote Deployment Attempt
+- Confirmed SSH authentication to GitHub as `saymagic`.
+- Confirmed `saymagic/xigui` does not exist.
+- Found existing Pages repository `saymagic/saymagic.github.io`.
+- Added the built static site under `xigui/` in that repository.
+- Updated `.github/workflows/deploy.yml` so changes under `xigui/**` trigger a Pages deployment and copy the static app into `output/public/xigui`.
+- Pushed remote commit `003e51e` to `saymagic/saymagic.github.io`.
+- GitHub Actions run `28557842069` failed before starting the job because GitHub reports the account is locked due to a billing issue.
+- Verified `https://saymagic.github.io/xigui/` redirects to `https://blog.saymagic.cn/xigui/`, but the target currently returns 404 because the Pages deployment did not run.
