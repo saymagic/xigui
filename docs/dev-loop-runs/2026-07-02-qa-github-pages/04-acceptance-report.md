@@ -26,6 +26,7 @@ PASS
 - Built package check: `dist` served locally with 393 cards and source image loaded.
 - Remote deployment attempt to `saymagic/saymagic.github.io`: pushed commits `003e51e` and `289c414`; GitHub Actions failed before assigning a runner.
 - Dedicated repo deployment: pushed source to `saymagic/xigui` `main` and published `dist` to `gh-pages`.
+- GitHub Pages branch deployment run `28631812914`: success.
 - Live URL check: `https://blog.saymagic.cn/xigui/` returns 200.
 - Live data check: `https://blog.saymagic.cn/xigui/src/data/questions.json` returns 393 questions across 20 chapters.
 

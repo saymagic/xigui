@@ -55,8 +55,9 @@ Local Git repository initialized on `main`. Remote GitHub Pages publishing is bl
 - GitHub Actions run `28631778585` failed before assigning a runner, matching the same account-level Actions block.
 - Published `dist` to the repository's `gh-pages` branch instead.
 - Remote branches:
-  - `main`: `c525f27`
+  - `main`: source project branch
   - `gh-pages`: `8cc2141`
+- GitHub Pages branch deployment run `28631812914` completed with `success`.
 - Verified `https://saymagic.github.io/xigui/` redirects to `https://blog.saymagic.cn/xigui/`.
 - Verified `https://blog.saymagic.cn/xigui/` returns 200.
 - Verified online assets:
