@@ -1,7 +1,7 @@
 # Acceptance Report
 
 ## Verdict
-PASS_WITH_NOTES
+PASS
 
 ## Scope Checked
 - PDF-to-Q&A extraction.
@@ -24,8 +24,10 @@ PASS_WITH_NOTES
 - Flashcard check: card mode showed question, answer hidden by default, reveal worked.
 - Mobile viewport check at 390 x 844: single-column layout, no horizontal overflow, search/select controls 340 x 44 px.
 - Built package check: `dist` served locally with 393 cards and source image loaded.
-- Remote deployment attempt: pushed commit `003e51e` to `saymagic/saymagic.github.io`; GitHub Actions run `28557842069` failed with a billing-lock account error before deployment.
-- Remote deployment retry: pushed commit `289c414`; GitHub Actions run `28567545898` failed before assigning a runner and had no steps.
+- Remote deployment attempt to `saymagic/saymagic.github.io`: pushed commits `003e51e` and `289c414`; GitHub Actions failed before assigning a runner.
+- Dedicated repo deployment: pushed source to `saymagic/xigui` `main` and published `dist` to `gh-pages`.
+- Live URL check: `https://blog.saymagic.cn/xigui/` returns 200.
+- Live data check: `https://blog.saymagic.cn/xigui/src/data/questions.json` returns 393 questions across 20 chapters.
 
 ## Requirement Coverage
 - Q&A website from the document: complete, 393 parsed questions.
@@ -33,11 +35,11 @@ PASS_WITH_NOTES
 - Mobile adaptation: verified at 390 x 844 with screenshot.
 - Complete usability: search, filter, list, flashcard, answer reveal, learned state.
 - Real testing: data, build, source server, dist server, browser interactions.
-- GitHub Pages deployment: deployment files were pushed to `saymagic/saymagic.github.io`, but repeated Pages actions did not start because GitHub reports the account is locked due to a billing issue. The target URL currently returns 404.
+- GitHub Pages deployment: complete via the `gh-pages` branch on `saymagic/xigui`. The URL is live at `https://blog.saymagic.cn/xigui/`.
 
 ## Findings
 - No unresolved app/data blockers.
-- Remote deployment is blocked by GitHub account billing state. The code, workflow changes, and retry trigger are already pushed, so the deployment should be able to run once the account lock is resolved and the workflow is re-run.
+- GitHub Actions remains blocked for this account, so the project uses branch-based GitHub Pages deployment instead.
 
 ## Fixes Applied
 - Added merged OCR line splitting for two-column artifacts.
@@ -49,4 +51,4 @@ PASS_WITH_NOTES
 - The site publishes extracted study content once pushed to a public Pages repository.
 
 ## Follow-ups
-- Resolve the GitHub billing/account lock, then re-run `Deploy static content to Pages` for commit `289c414` or push another `xigui/**` change to trigger it.
+- Future content updates can run `npm run deploy:gh-pages` after `npm test` and `npm run build`.

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build_site.mjs",
+    "deploy:gh-pages": "npm run build && node scripts/deploy_gh_pages.mjs",
     "test": "node scripts/validate_data.mjs",
     "serve": "python3 -m http.server 4173"
   }

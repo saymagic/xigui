@@ -48,3 +48,20 @@ Local Git repository initialized on `main`. Remote GitHub Pages publishing is bl
 - GitHub Actions run `28567545898` was created for `289c414` and completed with `failure`.
 - The job had no steps and no assigned runner (`runner_id: 0`), which confirms it failed before workflow execution.
 - Re-checked `https://saymagic.github.io/xigui/`; it still redirects to `https://blog.saymagic.cn/xigui/`, which still returns 404.
+
+## Dedicated Repository Deployment
+- User provided the dedicated repository `saymagic/xigui`.
+- Pushed the source project to `git@github.com:saymagic/xigui.git` on `main`.
+- GitHub Actions run `28631778585` failed before assigning a runner, matching the same account-level Actions block.
+- Published `dist` to the repository's `gh-pages` branch instead.
+- Remote branches:
+  - `main`: `c525f27`
+  - `gh-pages`: `8cc2141`
+- Verified `https://saymagic.github.io/xigui/` redirects to `https://blog.saymagic.cn/xigui/`.
+- Verified `https://blog.saymagic.cn/xigui/` returns 200.
+- Verified online assets:
+  - `index.html`: 200
+  - `src/data/questions.json`: 200, 393 questions, 20 chapters
+  - `src/app.js`: 200
+  - `src/styles.css`: 200
+  - `assets/source-preview.png`: 200
